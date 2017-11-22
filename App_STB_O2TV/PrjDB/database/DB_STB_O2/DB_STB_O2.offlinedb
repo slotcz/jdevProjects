@@ -1,0 +1,10 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<ProviderSettings xmlns="http://xmlns.oracle.com/ide/hash">
+   <hash n="dataTypeSettings">
+      <value n="databaseType" v="MySQL"/>
+      <value n="databaseVersion" v="50"/>
+   </hash>
+   <value n="id" v="6e39db41-b92d-4c19-810b-06a5b9cf6889"/>
+   <value n="name" v="DB_STB_O2"/>
+   <value n="offlineDBSchema" v="STB_O2"/>
+</ProviderSettings>
