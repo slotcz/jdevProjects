@@ -15,25 +15,34 @@ import javax.servlet.http.HttpServletResponse;
 @WebServlet(name = "RequestSTB", urlPatterns = { "/upgrade/*" }) //
 public class RequestSTB extends HttpServlet {
     private static final String CONTENT_TYPE = "text/html; charset=UTF-8";
+    private String varMAC = "";
+    private String varFWversion = "";
+    private String line = "";
+    private String pathImage = "";
+    private CheckerVersion checker;
+
     Logger log = Logger.getLogger(RequestSTB.class.getName());
 
     public void init(ServletConfig config) throws ServletException {
         super.init(config);
+        checker = new CheckerVersion();
     }
 
     public void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        String varMAC = "";
-        String varFWversion = "";
-        String line = "";
-        String path = "";
+
         try {
             line = request.getRequestURL().toString();
-            path = request.getPathInfo(); // .getContextPath();
+            pathImage = request.getPathInfo(); // .getContextPath();
             varMAC = request.getParameter("mac");
             varFWversion = request.getParameter("current_firmware_version");
         } catch (Exception e) {
             log.severe(e.getMessage());
         }
+        checker.verifyVersion(varMAC, pathImage, varFWversion);
+        responcer(response);
+    }
+
+    private void responcer(HttpServletResponse response) throws IOException {
         response.setContentType(CONTENT_TYPE);
         PrintWriter out = response.getWriter();
         out.println("<html>");
@@ -41,14 +50,13 @@ public class RequestSTB extends HttpServlet {
         out.println("<body>");
         out.println("<p>The servlet has received a POST or GET. This is the reply.</p>");
         out.println("<p>line=" + line + "*endline*</p>");
-        out.println("<p>path=" + path + "*endpath*</p>");
+        out.println("<p>path=" + pathImage + "*endpath*</p>");
         out.println("<p>mac=" + varMAC + "*mac*</p>");
         out.println("<p>current_firmware_version=" + varFWversion + "*current_firmware_version*</p>");
         out.println("</body></html>");
         out.close();
         String strLog =
-            "line=" + line + "*endline*" + " path=" + path + "*endpath* " + " mac=" + varMAC + "*mac*" + " current_firmware_version=" + varFWversion +
-            "*current_firmware_version*";
+            "line=" + line + "*endline*" + " path=" + pathImage + "*endpath* " + " mac=" + varMAC + "*mac*" + " current_firmware_version=" + varFWversion + "*current_firmware_version*";
         log.info(strLog);
     }
 }

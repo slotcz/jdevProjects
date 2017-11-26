@@ -28,8 +28,8 @@
       <string v="oracle.jdeveloper.model.PathsConfiguration/ResourceBundlesContentSet"/>
    </list>
    <list n="listOfChildren">
+      <hash><url n="URL" path="NG_STB_Model/NG_STB_Model.jpr"/></hash>
       <hash><url n="URL" path="PrjCntSTB/PrjCntSTB.jpr"/></hash>
-      <hash><url n="URL" path="PrjDB/PrjDB.jpr"/></hash>
       <hash><url n="URL" path="PrjServletRequestSTB/PrjServletRequestSTB.jpr"/></hash>
       <hash><url n="URL" path="SimpleHTTPMirror/SimpleHTTPMirror.jpr"/></hash>
    </list>
