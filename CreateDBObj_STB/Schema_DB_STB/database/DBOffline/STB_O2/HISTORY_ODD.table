@@ -21,7 +21,16 @@
       <notNull>true</notNull>
     </column>
     <column>
-      <name>DATE_CONNECT</name>
+      <name>VERSION_FW</name>
+      <dataTypeUsage>
+        <dataTypeID class="oracle.javatools.db.datatypes.DataTypeID">
+          <typeName>INT</typeName>
+        </dataTypeID>
+      </dataTypeUsage>
+      <notNull>true</notNull>
+    </column>
+    <column>
+      <name>DATE_UPDATE</name>
       <dataTypeUsage>
         <dataTypeID class="oracle.javatools.db.datatypes.DataTypeID">
           <typeName>DATETIME</typeName>
@@ -31,11 +40,11 @@
     </column>
   </columns>
   <constraints>
-    <constraint class="oracle.javatools.db.PKConstraint">
-      <name>PRIMARY</name>
+    <constraint class="oracle.javatools.db.FKConstraint">
+      <name>FW_FK1</name>
       <columnIDs>
         <columnID class="oracle.javatools.db.NameBasedID">
-          <name>ID</name>
+          <name>VERSION_FW</name>
           <parent class="oracle.javatools.db.NameBasedID">
             <name>HISTORY_ODD</name>
             <schemaName>STB_O2</schemaName>
@@ -46,9 +55,18 @@
         </columnID>
       </columnIDs>
       <enabled>true</enabled>
+      <referenceID class="oracle.javatools.db.ReferenceID">
+        <name>PRIMARY</name>
+        <parent class="oracle.javatools.db.NameBasedID">
+          <name>REGISTER_FW</name>
+          <schemaName>STB_O2</schemaName>
+          <type>TABLE</type>
+        </parent>
+        <type>CONSTRAINT</type>
+      </referenceID>
     </constraint>
     <constraint class="oracle.javatools.db.FKConstraint">
-      <name>HISTORY_ODD_FK1</name>
+      <name>STB_FK1</name>
       <columnIDs>
         <columnID class="oracle.javatools.db.NameBasedID">
           <name>STB</name>
@@ -71,6 +89,22 @@
         </parent>
         <type>CONSTRAINT</type>
       </referenceID>
+    </constraint>
+    <constraint class="oracle.javatools.db.PKConstraint">
+      <name>PRIMARY</name>
+      <columnIDs>
+        <columnID class="oracle.javatools.db.NameBasedID">
+          <name>ID</name>
+          <parent class="oracle.javatools.db.NameBasedID">
+            <name>HISTORY_ODD</name>
+            <schemaName>STB_O2</schemaName>
+            <type>TABLE</type>
+          </parent>
+          <schemaName>STB_O2</schemaName>
+          <type>COLUMN</type>
+        </columnID>
+      </columnIDs>
+      <enabled>true</enabled>
     </constraint>
   </constraints>
   <properties>

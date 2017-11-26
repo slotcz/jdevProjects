@@ -33,9 +33,11 @@ public class RegisterFw implements Serializable {
     private String manualPath;
     private String model;
     private String version;
-    @Column(name = "CATEGORY")
+
+    @JoinColumn(name = "CATEGORY", referencedColumnName = "ID")
+    @ManyToOne
     private Category category;
-    
+
     @OneToMany(mappedBy = "registerFw", cascade = { CascadeType.PERSIST, CascadeType.MERGE })
     private List<Stb> imageStbList;
     @OneToMany(mappedBy = "registerFw1", cascade = { CascadeType.PERSIST, CascadeType.MERGE })

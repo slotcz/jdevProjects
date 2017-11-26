@@ -25,6 +25,8 @@
       <string v="oracle.jdeveloper.model.PathsConfiguration/ResourceBundlesContentSet"/>
    </list>
    <list n="listOfChildren">
+      <hash><url n="URL" path="Model_STB/Model_STB.jpr"/></hash>
       <hash><url n="URL" path="Schema_DB_STB/Schema_DB_STB.jpr"/></hash>
+      <hash><url n="URL" path="UI_ModelSTB/UI_ModelSTB.jpr"/></hash>
    </list>
 </jws:workspace>
