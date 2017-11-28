@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<persistence xmlns="http://java.sun.com/xml/ns/persistence" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+             xsi:schemaLocation="http://java.sun.com/xml/ns/persistence http://java.sun.com/xml/ns/persistence/persistence_2_0.xsd"
+             version="2.0">
+  <persistence-unit name="Model_STB">
+    <provider>org.eclipse.persistence.jpa.PersistenceProvider</provider>
+    <jta-data-source>java:/app/jdbc/jdbc/ng_stbDS</jta-data-source>
+    <class>cz.o2.stb.dm.Category</class>
+    <class>cz.o2.stb.dm.HistoryEven</class>
+    <class>cz.o2.stb.dm.HistoryOdd</class>
+    <class>cz.o2.stb.dm.ImageStb</class>
+    <class>cz.o2.stb.dm.RegisterFw</class>
+    <class>cz.o2.stb.dm.Stb</class>
+    <properties>
+      <property name="eclipselink.target-server" value="org.eclipse.persistence.platform.server.glassfish.GlassfishPlatform"/>
+      <property name="javax.persistence.jtaDataSource" value="java:/app/jdbc/jdbc/ng_stbDS"/>
+    </properties>
+  </persistence-unit>
+</persistence>

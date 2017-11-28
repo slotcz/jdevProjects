@@ -1,0 +1,37 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE html>
+<f:view xmlns:f="http://java.sun.com/jsf/core" xmlns:af="http://xmlns.oracle.com/adf/faces/rich">
+    <af:document title="mainSTB_DB.jsf" id="d1">
+        <af:form id="f1">
+            <af:panelGridLayout id="pgl2">
+                <af:gridRow height="50px" id="gr2">
+                    <af:gridCell width="100%" halign="stretch" valign="stretch" id="gc1">
+                        <!-- Header -->
+                    </af:gridCell>
+                </af:gridRow>
+                <af:gridRow height="100%" id="gr1">
+                    <af:gridCell width="100%" halign="stretch" valign="stretch" id="gc2">
+                        <af:decorativeBox theme="dark" id="db2">
+                            <f:facet name="center">
+                                <af:panelSplitter orientation="horizontal" splitterPosition="100" id="ps1">
+                                    <f:facet name="first">
+                                        <!-- Left -->
+                                    </f:facet>
+                                    <f:facet name="second">
+                                        <af:decorativeBox theme="medium" id="db1">
+                                            <f:facet name="center">
+                                                <af:panelGroupLayout layout="scroll" id="pgl1">
+                                                    <!-- Content -->
+                                                </af:panelGroupLayout>
+                                            </f:facet>
+                                        </af:decorativeBox>
+                                    </f:facet>
+                                </af:panelSplitter>
+                            </f:facet>
+                        </af:decorativeBox>
+                    </af:gridCell>
+                </af:gridRow>
+            </af:panelGridLayout>
+        </af:form>
+    </af:document>
+</f:view>
