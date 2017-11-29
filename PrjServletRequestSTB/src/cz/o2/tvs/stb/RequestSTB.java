@@ -34,17 +34,18 @@ public class RequestSTB extends HttpServlet {
             line = request.getRequestURL().toString();
             String[] splitPath = request.getPathInfo()
                                         .trim()
-                                        .split("/"); // .getContextPath();
-            pathImage = splitPath[1];
+                                        .split("/");
+            pathImage = splitPath[1]; // image
             varMAC = request.getParameter("mac");
             varFWversion = request.getParameter("current_firmware_version");
         } catch (Exception e) {
             log.severe(e.getMessage());
         }
-        varFWversion = checker.verifyVersion(varMAC, pathImage, varFWversion);
-        responcer(response);
+        varFWversion = checker.getNewVersion(varMAC, pathImage, varFWversion);
+        if (!varFWversion.isEmpty()) {
+            responcer(response);
+        }
     }
-
 
     private void responcer(HttpServletResponse response) throws IOException {
         response.setContentType(CONTENT_TYPE);
