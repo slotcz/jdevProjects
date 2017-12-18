@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<persistence xmlns="http://java.sun.com/xml/ns/persistence" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+             xsi:schemaLocation="http://java.sun.com/xml/ns/persistence http://java.sun.com/xml/ns/persistence/persistence_2_0.xsd"
+             version="2.0">
+  <persistence-unit name="PrjCreateDB_STB">
+    <provider>org.eclipse.persistence.jpa.PersistenceProvider</provider>
+    <jta-data-source>java:/app/jdbc/jdbc/connSTB_BOOTDS</jta-data-source>
+    <class>cz.o2.vs.cdb.stb.Category</class>
+    <class>cz.o2.vs.cdb.stb.History</class>
+    <class>cz.o2.vs.cdb.stb.History1</class>
+    <class>cz.o2.vs.cdb.stb.ImageStb</class>
+    <class>cz.o2.vs.cdb.stb.Model</class>
+    <class>cz.o2.vs.cdb.stb.RegisterFw</class>
+    <class>cz.o2.vs.cdb.stb.Stb</class>
+    <properties>
+      <property name="eclipselink.target-server" value="WebLogic_10"/>
+      <property name="javax.persistence.jtaDataSource" value="java:/app/jdbc/jdbc/connSTB_BOOTDS"/>
+    </properties>
+  </persistence-unit>
+</persistence>
